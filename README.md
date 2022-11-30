@@ -28,3 +28,8 @@ Here are routes I already created:
 
 ## Postman Collection:
 AWS_Serverless_REST_API.postman_collection.json
+
+### To do:
+- implement versioning
+- dettach the logic from the functions - create usecases, dtos, entities and repositories
+- implement authentication
