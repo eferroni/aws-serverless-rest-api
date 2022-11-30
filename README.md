@@ -11,7 +11,7 @@ Steps:
     1. AmazonDynamoDBFullAccess.
     2. CloudWatchLogsFullAccess.
 
-## Rest API Routes V1:
+## Rest API Routes:
 
 Here are routes I already created:
 
