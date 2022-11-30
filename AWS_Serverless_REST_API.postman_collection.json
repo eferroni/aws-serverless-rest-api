@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "654df09a-3d8b-477b-b057-018b5d3c53ce",
+		"name": "AWS_Project1_REST_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15570202"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/health",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"health"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Com",
+							"disabled": true
+						},
+						{
+							"key": "author",
+							"value": "ed",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Book",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/books/:book_id",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"books",
+						":book_id"
+					],
+					"variable": [
+						{
+							"key": "book_id",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All Books",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/books?title=Com",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Com"
+						},
+						{
+							"key": "author",
+							"value": "22",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"pm.collectionVariables.set(\"book_id\", data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"232\",\n    \"title\": \"Computer Science Pro\",\n    \"author\": \"Eduardo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{host}}/books",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Computer Science Pro 22\",\n  \"author\": \"Eduardo 22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{host}}/books/:book_id",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"books",
+						":book_id"
+					],
+					"variable": [
+						{
+							"key": "book_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://{{host}}/books/:book_id",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"books",
+						":book_id"
+					],
+					"variable": [
+						{
+							"key": "book_id",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "nbhuyu1qih.execute-api.us-east-1.amazonaws.com/prod",
+			"type": "string"
+		}
+	]
+}
