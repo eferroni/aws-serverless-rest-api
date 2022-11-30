@@ -33,3 +33,4 @@ AWS_Serverless_REST_API.postman_collection.json
 - implement versioning
 - dettach the logic from the functions - create usecases, dtos, entities and repositories
 - implement authentication
+- create a SAML file
