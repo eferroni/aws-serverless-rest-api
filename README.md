@@ -4,12 +4,12 @@
 A simple books public CRUD API created with API Gateway, AWS Lambda and DynamoDB.
 
 Steps:
-1. Create a DynamoDB table named 'books'''
+1. Create a DynamoDB table named `books`.
 2. Create an AWS Lambda Function based on this repo (same folders).
 3. Create an API Gateway.
 4. Add the permissions bellow to the created Lambda IAM Role:
-5. AmazonDynamoDBFullAccess.
-6. CloudWatchLogsFullAccess.
+    1. AmazonDynamoDBFullAccess.
+    2. CloudWatchLogsFullAccess.
 
 ## Rest API Routes V1:
 
